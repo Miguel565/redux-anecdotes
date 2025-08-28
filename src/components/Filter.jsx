@@ -1,11 +1,12 @@
-import { useDispatch } from 'redux'
+import { useDispatch } from 'react-redux'
 import { filterChange } from '../reducers/anecdoteFilter'
 
 const Filter = () => {
     const dispatch = useDispatch()
     const handleFilter = (event) => {
         event.preventDefault()
-        dispatch(filterChange(event.target.filter.value))
+        const filter = event.target.value
+        dispatch(filterChange(filter))
     }
 
     const style = {
@@ -14,7 +15,7 @@ const Filter = () => {
 
     return (
         <div className={style}>
-            <input type="text" name="filter" onChange={handleFilter} />
+            <input type="text" onChange={handleFilter} />
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { createAnecdote } from '../reducer/anecdoteReducer'
+import { createAnecdote } from '../reducers/anecdoteReducer'
 import Notification from './Notification'
 
 const AnecdoteForm = () => {
@@ -15,7 +15,7 @@ const AnecdoteForm = () => {
         setNotification('Anecdote successfully created')
         setTimeout(() => {
             setNotification(null)
-        }, 5000)
+        }, 3000)
     }
 
     return (
