@@ -1,4 +1,4 @@
-import { createSlice, current } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 const filterSlice = createSlice({
     name: 'filter',
@@ -8,7 +8,6 @@ const filterSlice = createSlice({
             if (action.type !== 'ALL'){
                 return action.payload
             }
-            current(state)
             return state
         }
     }
