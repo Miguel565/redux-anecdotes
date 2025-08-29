@@ -1,18 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = anecdotesAtStart.map(asObject)
-
 const anecdoteSlice = createSlice({
   name: 'anecdotes',
   initialState: [],
   reducers: {
     createAnecdote(state, action) {
-      const newAnecdote = {
-        content: action.payload,
-        votes: 0
-      }
-      state.push(newAnecdote)
+      state.push(action.payload)
     },
+
     countVotes(state, action) {
       const id = action.payload
       const anecdoteToChange = state.find(n => n.id === id)
